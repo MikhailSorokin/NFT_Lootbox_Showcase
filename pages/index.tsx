@@ -873,6 +873,7 @@ const Home: NextPage = () => {
                     (<div>
                     <LoadingSpinner />
                   </div>)
+                  /* */
                 }
 
               </div>  
