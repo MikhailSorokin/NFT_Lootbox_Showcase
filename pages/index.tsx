@@ -956,15 +956,15 @@ const Home: NextPage = () => {
         <div>
           <p>You are not connected to this site! Open up your metamask wallet and look at the following instructions.</p>
           <div className={styles.horizontalBox}>
-            <img src="assets/ConnectMetaMask.png" />
+            <img src="assets/ConnectMetaMask.PNG" />
             <div className={styles.arrowContainer}>
               <div className = {styles.arrowRight}></div>
             </div>
-            <img src="assets/ConnectMetaMask2.png" />
+            <img src="assets/ConnectMetaMask2.PNG" />
             <div className={styles.arrowContainer}>
               <div className = {styles.arrowRight}></div>
             </div>
-            <img src="assets/ConnectMetaMask3.png" />
+            <img src="assets/ConnectMetaMask3.PNG" />
           </div>
         </div>
       )}
