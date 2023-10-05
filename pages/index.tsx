@@ -8,7 +8,7 @@ import styles from "../styles/Home.module.css";
 import LoadingSpinner from '../components/LoadingSpinner';
 import WalletContent from "../components/WalletContentComponent";
 
-const randomContractAddr = "0xc84a908A29A7B10a9316cf0bcD32D8f0c0757729";
+const randomContractAddr = "0x0da8FA20B133485B5C1A659871a549AD785327F1";
 
 // Setup provider
 import {ethers} from "ethers";
@@ -684,6 +684,64 @@ const Home: NextPage = () => {
     viewWallet();
   }
 
+  // Work around for tokenURI not being callable by anybody.
+  // Think new function has to be made for it
+  const allArrHack = [
+    'QmTfejYmT1f5dskG4oAbDnjt9bfCqMooAXUuDTGvkyrAhv',
+    'Qmf28Ayu5eWp1ay6zMkEYK1AZdwHfE2eHdBtXeoeCUcXzD',
+    'QmPdMCMtPWRd2EYXhVGwLSuYfc4psitRzx6dgRsPsdd3nh',
+    'QmYccozYGMwZuX8ixYWA3CTQ6bjoNb2Nd5ow3QjaHvaE4o',
+    'QmQXxcfEthboNfJQTpeNNUEgoqCDdW8RLC8sTgvxqT2HYG',
+    'QmdrmN7EkCMxpG3KZxKBatbtk32vesYi5wNJYeqWLF9j1G',
+    'QmTAvSXvwY5ZM5EWkNgqKzvH5MYSm6TaLknv8jMqYpzQv7',
+    'QmQ7r4L1yFxxYbpeYM4xmT6oQNtWWNj6E8tV2ssqAhUxhg',
+    'QmP1dgCHqMqBM74XHAR6drXWCNu25dNBRv7NHT78Z7qutP',
+    'QmSDW6agc1LcFQUkQp9sMuJo5MYHQ13TGo2o1cxPihXWfV',
+    'QmUg9cBSWmyXx1FBvSKKeoTaoEQqibdrwpJkoExLpuNLkC',
+    'QmZLUDnej46E5sWWDsNjciS9G78uXhiGMVccgeNy2Ra8WY',
+    'QmVJZFWiypheC1oifd5hNJe6NoT3BuZcN3VgRZRE48uNr3',
+    'Qmbcf4KeHiEWK4chVUKGPkkUysMy5egp2fe6LEL1pRaQS1',
+    'QmbTVT23cLLhcd4sWv7MLJa34zMAdLhvtQfu47E6zMwZiH',
+    'Qme2er3spdXaXpQ24KXUtceAanPfR1JQmdcpY6TaXZL3NK',
+    'QmWSunRD2bVSD55cZ3CvFu9vHQhDhYMLUv61U5QvGJRKnA',
+    'QmSGkPA47BLS25MHrNHNP3TAbY7Wn8xC1qAHXHD5mnDAzh',
+    'QmRWMMoQnU84SFRM9RpkZ7kMbrsN3wrggza4RQqykevz4E',
+    'QmSAjCHmZRtVWDv158t5MqyYCSKwpNstj619TaqAmTK25v',
+    'QmU6yYwVA3RLKrqvoKipGpyAh74TNqrrsT1oMATGJ8hVx7',
+    'QmSwrxDPw7f3zFX2GUffvouAagUdGjkpwhom9P6FayAho4',
+    'QmQKSk8sZutaB9iqDzwBcZuJc2iFSAqduYtXBRrSoBbv9J',
+    'QmRkFiuBS5NE5cdv43n1HWjUKFeNphtXq4MeUDoEJywKKU',
+    'QmWRDXWcF3sxSsaespBLzJ6rR5ez8dHdeE8giHJv7Hfck5',
+    'QmPmySuzx7rdpvfuoWaU5bUmjnpQLag3Nff3VL6ig5CeDv',
+    'QmVf3DHfRgFnv7DUhhH2zJ1nKpqwHBoavKnHSXt4kJjqiU',
+    'QmUV9rGZb7tWH89FaPx1MuLVZf2Hn4cvYiRz7nUievQhYp',
+    'QmZ5nDdp5c6Z45W7m9CNY29AahwszoaNQwKxLhMtU5JLmP',
+    'QmTXE2an1bDmuG46vbbc8f81mx85KyTc3M8pFDRh8p56qi',
+    'QmTsH7vyV1KZhqLMQHaj6iAz9tYKTmPb29aaqerQVDj6jy',
+    'QmcttM7HTvE7tswtChF99KX7q6VBmBmuxsRUTU8LwSefc7',
+    'QmNxzTtXVATis8PNVoUzqxqY69XWxEAFHfmakexbqBVrGF',
+    'QmTe3pKLwARLYABNb5QswDrtRUhhjJnLvGkdft94Y2as28',
+    'QmSrwBBwnjpJ4ci14svZVo7Kb89XaWYC2CJfHFnecA5Nan',
+    'QmTc1YVNFEkXpoTe5nGAL82FCrCJKzHmwxUh8NBhtW8uF9',
+    'QmdDSizmEZHhW9CbJXxj82rAse7FJbshoY6wFk7f6BWTFA',
+    'QmeritqHHhQow6G9RDxXwmXwCJeSoLpGZWaYR1npY6ELcm',
+    'QmPqUsthHTYkMzDSpBrktw8o8vpLs8NGabNdQ7zK14QUaU',
+    'QmT1fVmSiefwgbJwrrTmedBsvtW8nRGycu4aMNwZmecMAH',
+    'QmX6uEWSHd5iDBLR42vzEJL7LSfteddTVHnKNPXcUTR7ve',
+    'QmfMMLiAvnRxbwYrodC82wvTmQc3ZwGYBHmq8r557qHEcy',
+    'QmVpsDdsk9qQwtFdcd9et7Xk2wh6C7DEEcT4U6NnfdntKS',
+    'QmTGFaMJAGDRTcCDDSveqnvXTJiAyAysWr6T8VwddRRpC6',
+    'QmX83CbbLnBBvWxUJSADZqnS4sy1ssEpNsggFgFRD3WcWs',
+    'Qmem3vCvmH8voXwbUYeKDdfghMwAyatJc569kf2jAzEq5U',
+    'QmPhvYJyvxBFKTuBuT7Djr74hVmg6AyAVJVEA5woodKDXe',
+    'Qmc3W36e5Qdi8Hz1JrWLojYNgqSUeBk4CqimehXKf45tZx',
+    'QmQ5k4kybXXr1BKY1Exac7dvHVj5TPfmJKmFPjGcQ97fvf',
+    'QmXd9NC5p4ccDduNimmActKMxsCE8LxwALqj8BvVgn1t2o'
+  ];  
+
+  const { createAlchemyWeb3 } = require("@alch/alchemy-web3")
+  const web3 = createAlchemyWeb3("https://eth-sepolia.g.alchemy.com/v2/UGiOLu6ECp1vgYyelZNHwJeZGYPXHcAc");
+
   const viewWallet = async () => {
       // Connect to provider, get signer and then sign a transaction to mint the NFT
       if (selectedAccount != "")
@@ -693,23 +751,20 @@ const Home: NextPage = () => {
         {
           try {
             const signer = provider.getSigner();
-            const contract = new ethers.Contract(randomContractAddr, randomContractABI as any, signer);
-
-            let totalSupply = await contract.balanceOf(selectedAccount);
-            console.log(totalSupply);
-            for (var i = 0; i < totalSupply; i++)
+            const contract = new ethers.Contract(randomContractAddr, randomContractABI as any, signer);  
+  
+            let myBalance = await contract.balanceOf(selectedAccount);
+            console.log(myBalance);
+            for (var i = 0; i < myBalance; i++)
             {
               const tokenId = await contract.tokenOfOwnerByIndex(selectedAccount, i);
 
-              // Call the contract's function to get the user's NFT
-              const ipfsURL = await contract.tokenURI(tokenId);
-    
-              console.log(ipfsURL);
-    
-              const response = await fetch(ipfsURL);
+              console.log("Token id: ", tokenId);
+   
+              const response = await fetch("https://gateway.pinata.cloud/ipfs/" + allArrHack[tokenId]);
               const metadata = await response.json();
               console.log(metadata);
-                
+    
               const imageURL = metadata.image.replace("://", "/");
               const urlImage = "https://gateway.pinata.cloud/" + imageURL;
     
@@ -753,10 +808,11 @@ const Home: NextPage = () => {
         try {
           const signer = provider.getSigner();
           const contract = new ethers.Contract(randomContractAddr, randomContractABI as any, signer);
+
           // Convert Ether to wei
           const weiAmount = ethers.utils.parseEther("0.01");
 
-          const tx = await contract.randomMint(1, weiAmount);
+          const tx = await contract.randomMint(1, weiAmount); // Correct way to pass gasLimit
           // Wait for the transaction to be mined
           const receipt = await tx.wait();
 
@@ -769,13 +825,9 @@ const Home: NextPage = () => {
 
           console.log(event.args);
           const tokenId = event.args.tokenId.toNumber();
-
-          // Call the contract's function to get the user's NFT
-          const ipfsURL = await contract.tokenURI(tokenId);
-
-          console.log(ipfsURL);
-
-          const response = await fetch(ipfsURL);
+          console.log("Token id: ", tokenId);
+   
+          const response = await fetch("https://gateway.pinata.cloud/ipfs/" + allArrHack[tokenId]);
           const metadata = await response.json();
           console.log(metadata);
 

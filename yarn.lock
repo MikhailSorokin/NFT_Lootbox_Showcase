@@ -2,6 +2,28 @@
 # yarn lockfile v1
 
 
+"@alch/alchemy-web3@^1.4.7":
+  version "1.4.7"
+  resolved "https://registry.npmjs.org/@alch/alchemy-web3/-/alchemy-web3-1.4.7.tgz"
+  integrity sha512-7gmRdVDRLRT0PQnVHf4rizgGqHnQGeRJ0KuIjr0ewmMeXlRe8hJEIdEUTg9NjY9TC8jTJkOAiej5io7u9pppFQ==
+  dependencies:
+    "@types/web3" "^1.2.2"
+    assert-never "^1.2.0"
+    eventemitter3 "^3.1.2"
+    fetch-ponyfill "^6.0.2"
+    sturdy-websocket "^0.2.1"
+    tslib "^2.1.0"
+    urijs "^1.19.7"
+    web3 "^1.8.0"
+    web3-core "^1.8.0"
+    web3-core-helpers "^1.8.0"
+    web3-core-method "^1.8.0"
+    web3-core-subscriptions "^1.8.0"
+    web3-eth "^1.8.0"
+    web3-eth-abi "^1.8.0"
+    web3-utils "^1.8.0"
+    websocket "^1.0.28"
+
 "@ampproject/remapping@^2.1.0":
   version "2.2.0"
   resolved "https://registry.npmjs.org/@ampproject/remapping/-/remapping-2.2.0.tgz"
@@ -1343,6 +1365,13 @@
   resolved "https://registry.npmjs.org/@types/trusted-types/-/trusted-types-2.0.3.tgz"
   integrity sha512-NfQ4gyz38SL8sDNrSixxU2Os1a5xcdFxipAFxYEuLUlvU2uDwS4NUpsImcf1//SlWItCVMMLiylsxbmNMToV/g==
 
+"@types/web3@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.npmjs.org/@types/web3/-/web3-1.2.2.tgz"
+  integrity sha512-eFiYJKggNrOl0nsD+9cMh2MLk4zVBfXfGnVeRFbpiZzBE20eet4KLA3fXcjSuHaBn0RnQzwLAGdgzgzdet4C0A==
+  dependencies:
+    web3 "*"
+
 "@types/ws@^7.4.4":
   version "7.4.7"
   resolved "https://registry.npmjs.org/@types/ws/-/ws-7.4.7.tgz"
@@ -1834,6 +1863,11 @@ asn1@~0.2.3:
   integrity sha512-ix/FxPn0MDjeyJ7i/yoHGFt/EX6LyNbxSEhPPXODPL+KB0VPk86UYfL0lMdy+KCnv+fmvIzySwaK5COwqVbWTQ==
   dependencies:
     safer-buffer "~2.1.0"
+
+assert-never@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/assert-never/-/assert-never-1.2.1.tgz"
+  integrity sha512-TaTivMB6pYI1kXwrFlEhLeGfOqoDNdTxjCdwRfFFkEA30Eu+k48W34nlok2EYWJfFFzqaEmichdNM7th6M5HNw==
 
 assert-plus@^1.0.0, assert-plus@1.0.0:
   version "1.0.0"
@@ -3509,6 +3543,11 @@ ethjs-util@^0.1.3, ethjs-util@0.1.6:
     is-hex-prefixed "1.0.0"
     strip-hex-prefix "1.0.0"
 
+eventemitter3@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.1.2.tgz"
+  integrity sha512-tvtQIeLVHjDkJYnzf2dgVMxfuSGJeM/7UCG17TT4EumTfNtF+0nebF/4zWOIkCreAbtNqhGEboB6BWrwqNaw4Q==
+
 eventemitter3@^4.0.4:
   version "4.0.7"
   resolved "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.7.tgz"
@@ -3653,6 +3692,13 @@ fastq@^1.6.0:
   integrity sha512-wBrocU2LCXXa+lWBt8RoIRD89Fi8OdABODa/kEnyeyjS5aZO5/GNvI5sEINADqP/h8M29UHTHUb53sUu5Ihqdw==
   dependencies:
     reusify "^1.0.4"
+
+fetch-ponyfill@^6.0.2:
+  version "6.1.1"
+  resolved "https://registry.npmjs.org/fetch-ponyfill/-/fetch-ponyfill-6.1.1.tgz"
+  integrity sha512-rWLgTr5A44/XhvCQPYj0X9Tc+cjUaHofSM4lcwjc9MavD5lkjIhJ+h8JQlavPlTIgDpwhuRozaIykBvX9ItaSA==
+  dependencies:
+    node-fetch "~2.6.0"
 
 file-entry-cache@^6.0.1:
   version "6.0.1"
@@ -5092,7 +5138,7 @@ node-addon-api@^5.0.0:
   resolved "https://registry.npmjs.org/node-addon-api/-/node-addon-api-5.1.0.tgz"
   integrity sha512-eh0GgfEkpnoWDq+VY8OyvYhFEzBk6jIYbRKdIlyTiAXIVJ8PyBaKb0rp7oDtoddbdoHWhq8wwr+XZ81F1rpNdA==
 
-node-fetch@^2.6.1, node-fetch@2, node-fetch@2.6.7:
+node-fetch@^2.6.1, node-fetch@~2.6.0, node-fetch@2, node-fetch@2.6.7:
   version "2.6.7"
   resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
   integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
@@ -6327,7 +6373,7 @@ tslib@^1.9.0:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.0, tslib@^2.4.0:
+tslib@^2.0.0, tslib@^2.1.0, tslib@^2.4.0:
   version "2.6.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.6.1.tgz"
   integrity sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==
@@ -6456,6 +6502,11 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+urijs@^1.19.7:
+  version "1.19.11"
+  resolved "https://registry.npmjs.org/urijs/-/urijs-1.19.11.tgz"
+  integrity sha512-HXgFDgDommxn5/bIv0cnQZsPhHDA90NPHD6+c/v21U5+Sx5hoP8+dP9IZXBU1gIfvdRfhG8cel9QNPeionfcCQ==
 
 url-set-query@^1.0.0:
   version "1.0.0"
@@ -6601,6 +6652,14 @@ web3-bzz@1.8.2:
     got "12.1.0"
     swarm-js "^0.1.40"
 
+web3-core-helpers@^1.8.0, web3-core-helpers@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.npmjs.org/web3-core-helpers/-/web3-core-helpers-1.8.2.tgz"
+  integrity sha512-6B1eLlq9JFrfealZBomd1fmlq1o4A09vrCVQSa51ANoib/jllT3atZrRDr0zt1rfI7TSZTZBXdN/aTdeN99DWw==
+  dependencies:
+    web3-eth-iban "1.8.2"
+    web3-utils "1.8.2"
+
 web3-core-helpers@1.5.2:
   version "1.5.2"
   resolved "https://registry.npmjs.org/web3-core-helpers/-/web3-core-helpers-1.5.2.tgz"
@@ -6609,14 +6668,6 @@ web3-core-helpers@1.5.2:
     web3-eth-iban "1.5.2"
     web3-utils "1.5.2"
 
-web3-core-helpers@1.8.2:
-  version "1.8.2"
-  resolved "https://registry.npmjs.org/web3-core-helpers/-/web3-core-helpers-1.8.2.tgz"
-  integrity sha512-6B1eLlq9JFrfealZBomd1fmlq1o4A09vrCVQSa51ANoib/jllT3atZrRDr0zt1rfI7TSZTZBXdN/aTdeN99DWw==
-  dependencies:
-    web3-eth-iban "1.8.2"
-    web3-utils "1.8.2"
-
 web3-core-helpers@1.9.0:
   version "1.9.0"
   resolved "https://registry.npmjs.org/web3-core-helpers/-/web3-core-helpers-1.9.0.tgz"
@@ -6624,6 +6675,17 @@ web3-core-helpers@1.9.0:
   dependencies:
     web3-eth-iban "1.9.0"
     web3-utils "1.9.0"
+
+web3-core-method@^1.8.0, web3-core-method@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.npmjs.org/web3-core-method/-/web3-core-method-1.8.2.tgz"
+  integrity sha512-1qnr5mw5wVyULzLOrk4B+ryO3gfGjGd/fx8NR+J2xCGLf1e6OSjxT9vbfuQ3fErk/NjSTWWreieYWLMhaogcRA==
+  dependencies:
+    "@ethersproject/transactions" "^5.6.2"
+    web3-core-helpers "1.8.2"
+    web3-core-promievent "1.8.2"
+    web3-core-subscriptions "1.8.2"
+    web3-utils "1.8.2"
 
 web3-core-method@1.5.2:
   version "1.5.2"
@@ -6636,17 +6698,6 @@ web3-core-method@1.5.2:
     web3-core-promievent "1.5.2"
     web3-core-subscriptions "1.5.2"
     web3-utils "1.5.2"
-
-web3-core-method@1.8.2:
-  version "1.8.2"
-  resolved "https://registry.npmjs.org/web3-core-method/-/web3-core-method-1.8.2.tgz"
-  integrity sha512-1qnr5mw5wVyULzLOrk4B+ryO3gfGjGd/fx8NR+J2xCGLf1e6OSjxT9vbfuQ3fErk/NjSTWWreieYWLMhaogcRA==
-  dependencies:
-    "@ethersproject/transactions" "^5.6.2"
-    web3-core-helpers "1.8.2"
-    web3-core-promievent "1.8.2"
-    web3-core-subscriptions "1.8.2"
-    web3-utils "1.8.2"
 
 web3-core-method@1.9.0:
   version "1.9.0"
@@ -6713,6 +6764,14 @@ web3-core-requestmanager@1.9.0:
     web3-providers-ipc "1.9.0"
     web3-providers-ws "1.9.0"
 
+web3-core-subscriptions@^1.8.0, web3-core-subscriptions@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.npmjs.org/web3-core-subscriptions/-/web3-core-subscriptions-1.8.2.tgz"
+  integrity sha512-vXQogHDmAIQcKpXvGiMddBUeP9lnKgYF64+yQJhPNE5PnWr1sAibXuIPV7mIPihpFr/n/DORRj6Wh1pUv9zaTw==
+  dependencies:
+    eventemitter3 "4.0.4"
+    web3-core-helpers "1.8.2"
+
 web3-core-subscriptions@1.5.2:
   version "1.5.2"
   resolved "https://registry.npmjs.org/web3-core-subscriptions/-/web3-core-subscriptions-1.5.2.tgz"
@@ -6720,14 +6779,6 @@ web3-core-subscriptions@1.5.2:
   dependencies:
     eventemitter3 "4.0.4"
     web3-core-helpers "1.5.2"
-
-web3-core-subscriptions@1.8.2:
-  version "1.8.2"
-  resolved "https://registry.npmjs.org/web3-core-subscriptions/-/web3-core-subscriptions-1.8.2.tgz"
-  integrity sha512-vXQogHDmAIQcKpXvGiMddBUeP9lnKgYF64+yQJhPNE5PnWr1sAibXuIPV7mIPihpFr/n/DORRj6Wh1pUv9zaTw==
-  dependencies:
-    eventemitter3 "4.0.4"
-    web3-core-helpers "1.8.2"
 
 web3-core-subscriptions@1.9.0:
   version "1.9.0"
@@ -6737,7 +6788,7 @@ web3-core-subscriptions@1.9.0:
     eventemitter3 "4.0.4"
     web3-core-helpers "1.9.0"
 
-web3-core@^1.8.1, web3-core@1.8.2:
+web3-core@^1.8.0, web3-core@^1.8.1, web3-core@1.8.2:
   version "1.8.2"
   resolved "https://registry.npmjs.org/web3-core/-/web3-core-1.8.2.tgz"
   integrity sha512-DJTVEAYcNqxkqruJE+Rxp3CIv0y5AZMwPHQmOkz/cz+MM75SIzMTc0AUdXzGyTS8xMF8h3YWMQGgGEy8SBf1PQ==
@@ -6776,7 +6827,7 @@ web3-core@1.9.0:
     web3-core-requestmanager "1.9.0"
     web3-utils "1.9.0"
 
-web3-eth-abi@1.8.2:
+web3-eth-abi@^1.8.0, web3-eth-abi@1.8.2:
   version "1.8.2"
   resolved "https://registry.npmjs.org/web3-eth-abi/-/web3-eth-abi-1.8.2.tgz"
   integrity sha512-Om9g3kaRNjqiNPAgKwGT16y+ZwtBzRe4ZJFGjLiSs6v5I7TPNF+rRMWuKnR6jq0azQZDj6rblvKFMA49/k48Og==
@@ -6886,7 +6937,7 @@ web3-eth-personal@1.8.2:
     web3-net "1.8.2"
     web3-utils "1.8.2"
 
-web3-eth@1.8.2:
+web3-eth@^1.8.0, web3-eth@1.8.2:
   version "1.8.2"
   resolved "https://registry.npmjs.org/web3-eth/-/web3-eth-1.8.2.tgz"
   integrity sha512-JoTiWWc4F4TInpbvDUGb0WgDYJsFhuIjJlinc5ByjWD88Gvh+GKLsRjjFdbqe5YtwIGT4NymwoC5LQd1K6u/QQ==
@@ -7002,7 +7053,7 @@ web3-shh@1.8.2:
     web3-core-subscriptions "1.8.2"
     web3-net "1.8.2"
 
-web3-utils@^1.3.4, web3-utils@^1.8.1, web3-utils@1.8.2:
+web3-utils@^1.3.4, web3-utils@^1.8.0, web3-utils@^1.8.1, web3-utils@1.8.2:
   version "1.8.2"
   resolved "https://registry.npmjs.org/web3-utils/-/web3-utils-1.8.2.tgz"
   integrity sha512-v7j6xhfLQfY7xQDrUP0BKbaNrmZ2/+egbqP9q3KYmOiPpnvAfol+32slgL0WX/5n8VPvKCK5EZ1HGrAVICSToA==
@@ -7041,7 +7092,7 @@ web3-utils@1.9.0:
     randombytes "^2.1.0"
     utf8 "3.0.0"
 
-web3@^1.8.2:
+web3@*, web3@^1.8.0, web3@^1.8.2:
   version "1.8.2"
   resolved "https://registry.npmjs.org/web3/-/web3-1.8.2.tgz"
   integrity sha512-92h0GdEHW9wqDICQQKyG4foZBYi0OQkyg4CRml2F7XBl/NG+fu9o6J19kzfFXzSBoA4DnJXbyRgj/RHZv5LRiw==
@@ -7059,7 +7110,7 @@ webidl-conversions@^3.0.0:
   resolved "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-3.0.1.tgz"
   integrity sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==
 
-websocket@^1.0.32, websocket@^1.0.34:
+websocket@^1.0.28, websocket@^1.0.32, websocket@^1.0.34:
   version "1.0.34"
   resolved "https://registry.npmjs.org/websocket/-/websocket-1.0.34.tgz"
   integrity sha512-PRDso2sGwF6kM75QykIesBijKSVceR6jL2G8NGYyq2XrItNC2P5/qL5XeR056GhA+Ly7JMFvJb9I312mJfmqnQ==
