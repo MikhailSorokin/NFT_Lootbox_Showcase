@@ -914,6 +914,12 @@ const Home: NextPage = () => {
               <button className = {styles.mainButton} onClick={handleOpenBox} disabled={isButtonDisabled}>Generate a random NFT (can only be done once)</button>
             </div>            
           )}
+                    
+          {showErrorMessage && (
+            <div>
+              <h3 color="red">{errorMessage}</h3>
+            </div>
+          )}
           { openBox && (
             <div className={styles.nftBoxGrid}>
               <div className={classNames(styles.nftBox, styles.centered)}>
@@ -938,12 +944,7 @@ const Home: NextPage = () => {
             <WalletContent NFT={selectedNFT} />
           )}
           {!canViewWallet && <button className = {styles.newButton} onClick={handleViewWallet}>View Wallet</button>}
-          
-          {showErrorMessage && (
-            <div>
-              <h3 color="red">{errorMessage}</h3>
-            </div>
-          )}
+
 
         </div>
       ) : (
